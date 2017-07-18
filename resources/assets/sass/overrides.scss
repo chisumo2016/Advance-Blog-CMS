@@ -1,3 +1,21 @@
+/*===================Text Overrides================
+
+====================================================*/
+
+.is-muted{
+  color: $grey-light !important;
+}
+
+a.is-muted:hover{
+  color:$grey !important;
+}
+
+
+/*===================Dropdown Overrides================
+  Bulma doesn't come with  a dropdown, so I have  to take
+  matter  into my  own hands .This creates a  dropdown menu
+====================================================*/
+
 .dropdown {
   position: relative;
 
@@ -17,8 +35,9 @@
         border-top:1px solid #ccc;
         margin: 5px 0;
       }
+
       &>a{
-        margin:5px 0 ;
+        margin:5px 0  ;
         display: block;
         padding:5px 0 5px 15px;
 
@@ -37,7 +56,7 @@
     display: block;
   }
 
-  button.nav-item {
+  button .nav-item {
     background-color: transparent;
     border: none;
     color: $text-light;
@@ -73,12 +92,51 @@
   }
 
 
-  .nav-item img {
-    max-height: 2.8rem;
+  button.nav-item{
+    background-color: white;
+    border: none;
+    color: $text-light;
+
   }
 
-  .nav {
-    height: 4.5rem;
+  &:hover{
+    color: $link-hover;
   }
+
+  // Modifiers
+  &.is-active{
+    color: $link-active;
+  }
+  &.is-tab{
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    padding-bottom: calc(0.75rem - 1px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: calc(0.75rem - 1px);
+  }
+
+
+  &:hover{
+    border-bottom-color: $primary;
+    border-top-color: transparent;
+  }
+
+  &.is-active{
+    border-bottom: 3px solid $primary;
+    color: $primary;
+    padding-bottom: calc(0.75rem - 3px);
+  }
+
 
 }
+
+
+.nav-item img {
+  max-height: 2.8rem;
+}
+
+.nav {
+  height: 4.5rem;
+}
+

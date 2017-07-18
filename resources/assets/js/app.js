@@ -16,6 +16,8 @@ var app = new Vue({
     data: {}
 });
 
+//Customize the dropdown
+
 $(document).ready(function () {
     $('button.dropdown').hover(function (e) {
          $(this).toggleClass('is-open');
