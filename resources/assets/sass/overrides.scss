@@ -20,41 +20,53 @@ a.is-muted:hover{
   position: relative;
 
   .dropdown-menu {
-    display: none;
-    position: absolute;
-    left: 0;
-    top:103%;
-    z-index: 1000;
+    box-shadow: 0 0 8px #777;
     background-color: white;
-    min-width:200px;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 102%;
+    z-index: 1000;
+    padding: 10px 0 0px 0;
+    min-width: 200px;
+    box-shadow: 0 0 1px rgba(57,70,78,.15), 0 20px 55px -8px rgba(57,70,78,.25);
     text-align: left;
-    box-shadow: 0 0 1px rgba(57,70,78,.15), 0 20px 55px -8px rgba(57, 70, 78,.25);
-
-    li{
-      &.seperator{
-        border-top:1px solid #ccc;
+    li {
+      &.seperator {
         margin: 5px 0;
+        width: 100%;
+        border-top: 1px solid #ccc;
       }
 
-      &>a{
-        margin:5px 0  ;
+      &>a {
         display: block;
-        padding:5px 0 5px 15px;
-
-        &:hover{
+        padding: 5px 0 5px 15px;
+        margin: 5px 0;
+        &:hover {
           background-color: whitesmoke;
         }
       }
     }
   }
-  &.is-aligned-right .dropdown-menu {
-    right: 0;
-    left: auto;
-  }
 
-  &.is-open .dropdown-menu{
+  .dropdown.is-open .dropdown-menu{
     display: block;
   }
+
+  .dropdown.is-aligned-right .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+
+  /* ========================================
+   =========== Nav Item Override ==========
+   ======================================== */
+
+  // I want the .nav-item design that comes from bulma,
+  // but with <button> instead of <a>. This is the bulma
+  // code but targeting <button> instead, plus a few
+  // modifications to normalize the <button> css
+
 
   button .nav-item {
     background-color: transparent;
