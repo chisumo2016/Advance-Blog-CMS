@@ -1,24 +1,22 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 // Variables
 @import "variables";
-//Font Awesome
+
+// Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
 // Bulma
 @import "node_modules/bulma/bulma";
 
-//Bulma Vue Modules
-
+// Bulma Vue Modules
 @import "node_modules/buefy/src/scss/buefy";
 
-
-//Custom SASS Pages
-
+// Other SCSS Files
 @import "overrides";
-@import "helpers"; // class helper
-@import "manage"; // class helper
-@import "styles"; // main styles
-
+@import "helpers";
+@import "manage";
+@import "styles";
