@@ -772,30 +772,25 @@ module.exports = g;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_buefy___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_buefy__);
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 __webpack_require__(28);
 
 window.Vue = __webpack_require__(33);
 
+
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 
-var app = new Vue({
-  el: '#app',
-  data: {}
-});
+// Vue.component('example', require('./components/Example.vue'));
 
-//Customize the dropdown
+// var app = new Vue({
+//   el: '#app',
+//   data: {}
+// });
 
 $(document).ready(function () {
-  $('button.dropdown').hover(function (e) {
-    $(this).toggleClass('is-open');
-  });
+    //  Dropdowns
+    $('.dropdown').hover(function (e) {
+        $(this).toggleClass('is-open');
+    });
 });
 
 /**
