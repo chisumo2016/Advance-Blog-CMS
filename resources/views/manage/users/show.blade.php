@@ -4,8 +4,8 @@
   <div class="flex-container">
       <div class="columns m-t-10">
           <div class="column">
-              <h1 class="title">{{ $user->name }}</h1>
-              <h4 class="subtitle">View User Details</h4>
+              {{--<h1 class="title">{{ $user->name }}</h1>--}}
+              <h1 class="subtitle">View User Details</h1>
           </div>
 
           <div class="column">
@@ -19,12 +19,24 @@
           <div class="column">
               <div class="field">
                   <label for="name" class="label">Name</label>
-                  <div class="column">{{ $user->name }}</div>
+                  <pre class="column">{{ $user->name }}</pre>
               </div>
 
+
               <div class="field">
-                  <label for="email" class="label">Email</label>
-                  <pre>{{ $user->email }}</pre>
+                  <label for="name" class="label">Name</label>
+                  <pre class="column">{{ $user->email }}</pre>
+              </div>
+
+
+              <div class="field">
+                  <label for="name" class="label">Roles</label>
+                  <ul>
+                      {{ $user->roles->count() == 0 ? 'This user has not assigned any roles yet' : ' ' }}
+                      @foreach($user->roles as $role)
+                        <li>{{ $role->display_name }}   ({{ $role->description }})</li>
+                      @endforeach
+                  </ul>
               </div>
 
           </div>
