@@ -50,7 +50,7 @@ class UserController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users'
         ]);
-        if (!empty($request->password)) {
+        if (!empty($request->password)) {       //  if(Request::has('password') && !empty($request->password))
             $password = trim($request->password);
         } else {
             # set the manual password
@@ -63,10 +63,14 @@ class UserController extends Controller
             }
             $password = $str;
         }
+
+        //Create a User
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($password);
+
+        //Save a User
         if ($user->save()) {
             return redirect()->route('users.show', $user->id);
         } else {
@@ -132,6 +136,7 @@ class UserController extends Controller
             for ($i = 0; $i < $length; ++$i) {
                 $str .= $keyspace[random_int(0, $max)];
             }
+            //Set the password
             $user->password = Hash::make($str);
         }elseif ($request->password_options == 'manual'){
             $user->password = hash::make($request->password);

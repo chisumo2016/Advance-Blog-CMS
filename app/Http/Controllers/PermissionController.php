@@ -40,7 +40,8 @@ class PermissionController extends Controller
     public function store(Request $request)
     {
         //Validate
-        if ($request->permission_type == 'basic') {
+
+        if ($request->permission_type == 'basic') { // checking the if it's basic
             $this->validate($request, [
                 'display_name' => 'required|max:255',
                 'name' => 'required|max:255|alphadash|unique:permissions,name',
