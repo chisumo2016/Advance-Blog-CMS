@@ -4,10 +4,16 @@
             <a class="nav-item is-paddingless" href="{{route('home')}}">
                 <img src="{{asset('images/devmarketer-logo.png')}}" alt="DevMarketer logo">
             </a>
+
+            <a href="navbar-item is-hidden-desktop" id="admin-slideout-button">
+                <span class="icon"><i class="fa fa-arrow-circle-o-right"></i></span>
+            </a>
+
             <a class="nav-item is-tab is-hidden-mobile m-l-10">Learn</a>
             <a class="nav-item is-tab is-hidden-mobile">Discuss</a>
             <a class="nav-item is-tab is-hidden-mobile">Share</a>
         </div>
+
         <span class="nav-toggle">
       <span></span>
       <span></span>
@@ -18,7 +24,7 @@
             <a class="nav-item is-tab is-hidden-tablet">Discuss</a>
             <a class="nav-item is-tab is-hidden-tablet">Share</a>
             @if (Auth::guest())
-                <a href="{{route('login')}}" class="nav-item is-tab">Login</a>
+                <a href="{{route('login')}}"    class="nav-item is-tab">Login</a>
                 <a href="{{route('register')}}" class="nav-item is-tab">Join the Community</a>
             @else
                 <button class="dropdown is-aligned-right nav-item is-tab" >
