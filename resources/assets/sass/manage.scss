@@ -1,14 +1,27 @@
-.admin-side-menu {
-  position: absolute;
+#admin-side-menu {
+  position: fixed;
   top: 4rem;
-  left: -200px;
+  left: -200px ;
   bottom: 0;
   width: 200px;
   background-color: white;
   overflow-y: scroll;
+  transition: left 0.3s  ease-in-out;
+  &.is-active{
+    transition: left 0.3s  ease-in-out;
+    left: 0;
+  }
 
   @include desktop{
     left: 0;
+  }
+}
+
+#admin-slideout-button{
+  transition: 0.3s;
+  .is-active{
+    transition: 0.3s;
+    transform: rotateY(180deg);
   }
 }
 
@@ -36,5 +49,7 @@
   margin-top: 0;
   margin-bottom:0;
 }
+
+
 
 

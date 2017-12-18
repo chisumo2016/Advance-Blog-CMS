@@ -2,24 +2,27 @@
     <div class="container">
         <div class="nav-left">
             <a class="nav-item is-paddingless" href="{{route('home')}}">
-                <img src="{{asset('images/devmarketer-logo.png')}}" alt="DevMarketer logo">
+                {{--<img src="{{asset('images/')}}" alt="DevMarketer logo">--}}
             </a>
 
-            <a href="navbar-item is-hidden-desktop" id="admin-slideout-button">
-                <span class="icon"><i class="fa fa-arrow-circle-o-right"></i></span>
-            </a>
+            {{--Arrow Icon--}}
+            @if(Request::segment(1) == "manage")
+                <a class="navbar-item is-hidden-desktop" id="admin-slideout-button">
+                    <span class="icon"><i class="fa fa-arrow-circle-o-right"></i></span>
+                </a>
+            @endif
 
             <a class="nav-item is-tab is-hidden-mobile m-l-10">Learn</a>
             <a class="nav-item is-tab is-hidden-mobile">Discuss</a>
             <a class="nav-item is-tab is-hidden-mobile">Share</a>
         </div>
 
-        <span class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-        <div class="nav-right nav-menu" style="overflow: visible">
+        <button class="button navbar-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-right nav-menu">   {{-- style="overflow: visible ---}}
             <a class="nav-item is-tab is-hidden-tablet is-active">Learn</a>
             <a class="nav-item is-tab is-hidden-tablet">Discuss</a>
             <a class="nav-item is-tab is-hidden-tablet">Share</a>

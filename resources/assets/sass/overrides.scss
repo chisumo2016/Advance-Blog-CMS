@@ -114,7 +114,12 @@ button.nav-item {
 }
 
 
-
+.navbar-brand  .brand-item{
+  margin-right: 0px;
+  @include  desktop {
+    margin-right: 15px;
+  }
+}
 .navbar-burger{
   border: none;
 }
