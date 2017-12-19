@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('manage.posts.index');
     }
 
     /**
@@ -24,6 +24,8 @@ class PostController extends Controller
     public function create()
     {
         //
+
+        return view('manage.posts.create');
     }
 
     /**
