@@ -24,12 +24,12 @@ require('./manage')
 // });
 
 
-$(document).ready(function() {
-    //  Dropdowns
-    $('.dropdown').hover(function(e) {
-        $(this).toggleClass('is-open')
-    })
-})
+// $(document).ready(function() {
+//     //  Dropdowns
+//     $('.dropdown').hover(function(e) {
+//         $(this).toggleClass('is-open')
+//     })
+// });
 
 
 
