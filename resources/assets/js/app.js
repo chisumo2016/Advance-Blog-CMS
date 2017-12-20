@@ -1,18 +1,28 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-import Buefy from 'buefy'
+window.Slug = require('slug');
+Slug.defaults.mode = 'rfc3986';
 
+import Buefy from 'buefy'
 Vue.use(Buefy);
 
-require('./manage')
-
-// Vue.component('example', require('./components/Example.vue'));
+Vue.component('slug-widget', require('./components/slugWidget.vue'));
 
 // var app = new Vue({
 //   el: '#app',
 //   data: {}
 // });
+
+require('./manage')
+
+
+
+// const app = new Vue({
+//     el: '#app',
+//     data: {}
+// });
+
 
 $(document).ready(function() {
     //  Dropdowns
@@ -30,8 +40,10 @@ $(document).ready(function() {
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-//Vue.component('example', require('./components/Example.vue'));
 
-// const app = new Vue({
-//     el: '#app'
+// Vue.component('example', require('./components/Example.vue'));
+
+// var app = new Vue({
+//   el: '#app',
+//   data: {}
 // });
