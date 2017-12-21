@@ -179,6 +179,7 @@ return [
         App\Providers\ObserverServiceProvider::class,
 
         DevMarketer\EasyNav\EasyNavServiceProvider::class,
+        DevMarketer\LaraFlash\LaraFlashServiceProvider::class,
 
         /*
          Third party service providers
@@ -237,6 +238,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Nav' => DevMarketer\EasyNav\EasyNavFacade::class,
+
+        'LaraFlash' => DevMarketer\LaraFlash\LaraFlashFacade::class,
 
     ],
 

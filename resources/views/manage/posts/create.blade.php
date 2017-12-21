@@ -17,19 +17,18 @@
             <div class="columns">
                 <div class="column is-three-quarters-desktop is-three-quarters-tablet">
                     <b-field>
-                        <b-input type="text" placeholder="Post Title" size="is-large" v-model="title" >
+                        <b-input type="text" placeholder="Post Title" size="is-large" v-model="title">
                         </b-input>
                     </b-field>
-                       {{--<p>{{ url('/blog') }}</p>--}}
 
-                    <slug-Widget url="{{ url('/') }}" subdirectory="/blog-forum"   :title="title"  @slug-changed="updateSlug"></slug-Widget>
-
+                    <slug-widget url="{{url('/')}}" subdirectory="blog-forum" :title="title" @copied="slugCopied" @slug-changed="updateSlug"></slug-widget>
                     <input type="hidden" v-model="slug" name="slug" />
 
                     <b-field class="m-t-40">
-                        <b-input type="textarea" placeholder="Compose your masterpiece..." rows="20"></b-input>
+                        <b-input type="textarea"
+                                 placeholder="Compose your masterpiece..." rows="20">
+                        </b-input>
                     </b-field>
-
                 </div> <!-- end of .column.is-three-quarters -->
 
                 <div class="column is-one-quarter-desktop is-narrow-tablet">
@@ -38,7 +37,7 @@
                             <div class="selected-author">
                                 <img src="https://placehold.it/50x50"/>
                                 <div class="author">
-                                    <h4>Chisumo Bernard</h4>
+                                    <h4>Ben Chisumo</h4>
                                     <p class="subtitle">
                                         (chisumo)
                                     </p>
@@ -81,14 +80,16 @@
             data: {
                 title: '',
                 slug: '',
-                api_token: '{{ Auth::user()->api_token}}'
+                api_token: '{{Auth::user()->api_token}}'
             },
             methods: {
-                updateSlug: function(val){
+                updateSlug: function(val) {
                     this.slug = val;
+                },
+                slugCopied: function(type, msg, val) {
+                    notifications.toast(msg, {type: `is-${type}`});
                 }
             }
-
         });
     </script>
 @endsection
